@@ -13,6 +13,13 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 const Monkey = require('monkey-typewriter')
 
+router.post('/discord_events', (req, res) => {
+     console.log('discord event')
+     console.log(req.headers)
+     console.log(req.body)
+     res.sendStatus(200)
+})
+
 router.get('/', (req, res) => {
      console.log('received a [GET] ')
 
@@ -48,5 +55,5 @@ router.get('/', (req, res) => {
      `)
 })
 
-
+app.use('/', router)
 app.listen(process.env.PORT)
