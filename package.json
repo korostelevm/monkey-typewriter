@@ -23,6 +23,7 @@
     "mocha": "^9.1.3"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "monkey-typewriter": "^1.0.8"
   }
 }

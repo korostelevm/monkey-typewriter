@@ -1,7 +1,19 @@
 const express = require('express')
-const Monkey = require('monkey-typewriter')
+const bodyParser = require('body-parser')
+// const crypto = require('crypto')
+// const token = process.env.SLACK_TOKEN;
+// const web = new WebClient(token);
 const app = express()
-app.get('/', (req, res) => {
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
+const router = express.Router()
+router.use(bodyParser.json())
+router.use(bodyParser.urlencoded({ extended: true }))
+const Monkey = require('monkey-typewriter')
+
+router.get('/', (req, res) => {
      console.log('received a [GET] ')
 
      let w  = Monkey.word()
