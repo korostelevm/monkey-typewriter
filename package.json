@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
-    "monkey-typewriter": "^1.0.8"
+    "monkey-typewriter": "^1.0.8",
+    "tweetnacl": "^1.0.3"
   }
 }
