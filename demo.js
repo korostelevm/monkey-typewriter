@@ -27,7 +27,7 @@ router.post('/discord_events', (req, res) => {
      console.log(req.headers)
      console.log(req.rawBody)
 
-     const signature = req.headers['x-signature-=ed25519'];
+     const signature = req.headers['x-signature-ed25519'];
      const timestamp = req.headers['x-signature-timestamp'];
      console.log(signature,timestamp)
      const body = JSON.stringify(req.body); // rawBody is expected to be a string, not raw bytes
