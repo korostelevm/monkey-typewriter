@@ -26,10 +26,9 @@ router.post('/discord_events', (req, res) => {
      console.log(req.headers)
      console.log(req.body)
 
-     const signature = req.get('X-Signature-Ed25519');
-     const timestamp = req.get('X-Signature-Timestamp');
-     const body = req.rawBody; // rawBody is expected to be a string, not raw bytes
-
+     const signature = req.headers['x-signature-=ed25519'];
+     const timestamp = req.headers['x-signature-timestamp'];
+     const body = JSON.stringify(req.body); // rawBody is expected to be a string, not raw bytes
      const isVerified = nacl.sign.detached.verify(
      Buffer.from(timestamp + body),
      Buffer.from(signature, 'hex'),
