@@ -23,12 +23,15 @@ const Monkey = require('monkey-typewriter')
 // }
 router.post('/discord_events', (req, res) => {
      console.log('discord event')
+     console.log(process.env.DISCORD_PUBLIC_KEY)
      console.log(req.headers)
-     console.log(req.body)
+     console.log(req.rawBody)
 
      const signature = req.headers['x-signature-=ed25519'];
      const timestamp = req.headers['x-signature-timestamp'];
+     console.log(signature,timestamp)
      const body = JSON.stringify(req.body); // rawBody is expected to be a string, not raw bytes
+     console.log(body)
      const isVerified = nacl.sign.detached.verify(
      Buffer.from(timestamp + body),
      Buffer.from(signature, 'hex'),
