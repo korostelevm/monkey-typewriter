@@ -44,7 +44,7 @@ router.post('/discord_events', (req, res) => {
      }
 
 
-     return res.sendStatus(200)
+     return res.json({'type': 1})
 })
 
 router.get('/', (req, res) => {
