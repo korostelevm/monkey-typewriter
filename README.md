@@ -1,5 +1,5 @@
 # monkey-typewriter
-Randomly generated words and slugs that look and sound like english words. 
+Randomly generated words and slugs that look and sound like english words.
 
 
 ## Infinite monkey theorem
