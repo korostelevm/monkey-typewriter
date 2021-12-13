@@ -51,8 +51,8 @@ router.get('/', (req, res) => {
      console.log('received a [GET] ')
      console.log(req.query)
      console.log(new Date())
-     console.log(new Array([1,2,3,4,5]))
-     console.log(Monkey)
+     console.log([1,2,3,4,5])
+     console.log(express)
      console.log(Buffer.from('asdf'))
      let w  = Monkey.word()
      let l = w.length+1 - 4;
