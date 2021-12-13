@@ -7,7 +7,7 @@ const app = express()
 const nacl = require('tweetnacl');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-
+ 
 const router = express.Router()
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
@@ -50,7 +50,9 @@ router.post('/discord_events', (req, res) => {
 router.get('/', (req, res) => {
      console.log('received a [GET] ')
      console.log(req.headers)
+     console.log(new Date())
      console.log([1,2,3,4,5])
+     console.log(Monkey)
      let w  = Monkey.word()
      let l = w.length+1 - 4;
      let fill = (c,n)=>{
