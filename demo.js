@@ -49,7 +49,8 @@ router.post('/discord_events', (req, res) => {
 
 router.get('/', (req, res) => {
      console.log('received a [GET] ')
-
+     console.log(req.headers)
+     console.log([1,2,3,4,5])
      let w  = Monkey.word()
      let l = w.length+1 - 4;
      let fill = (c,n)=>{
